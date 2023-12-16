@@ -1,8 +1,8 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
-import Contact from "./contact/contact";
-import PostDetail from "./post/post-detail";
-import PostList from "./post/post-list";
+import Contact from "./contact/Contact";
+import PostDetail from "./post/Post-detail";
+import PostList from "./post/Post-list";
 import Home from "./pages/Home";
 
 function App() {
