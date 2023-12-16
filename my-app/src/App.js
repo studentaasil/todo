@@ -8,10 +8,14 @@ import Home from "./pages/Home";
 function App() {
   return (
     <div className="App">
-      <Contact />
-      <PostDetail />
-      <PostList />
-      <Home />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/post-list" element={<PostList />} />
+          <Route path="/posts/:id" element={<PostDetail />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
