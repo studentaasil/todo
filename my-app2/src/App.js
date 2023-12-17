@@ -1,8 +1,8 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
-import Contact from "./contact/Contact";
-// import PostDetail from "./post/Post-detail";
-import PostList from "./post/Post-list";
+import Contact from "./pages/Contact";
+import Postlist from "./pages/Postlist";
+import PostDetails from "./pages/PostDetails";
 import Home from "./pages/Home";
 
 function App() {
@@ -12,8 +12,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/post-list" element={<PostList />} />
-          {/* <Route path="/posts/:id" element={<PostDetail />} /> */}
+          <Route path="/post-list" element={<Postlist />} />
+          <Route path="/posts/:id" element={<PostDetails />} />
         </Routes>
       </BrowserRouter>
     </div>
