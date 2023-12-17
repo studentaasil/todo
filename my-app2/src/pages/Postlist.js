@@ -1,22 +1,27 @@
 import React, { useEffect, useState } from "react";
 
 function Postlist() {
-  const [post, setPost] = useState([]);
+  const [recourceType, setRecourceType] = useState("posts");
+  const [Items, setItems] = useState([]);
 
   useEffect(() => {
-    fetch("https://jsonplaceholder.typicode.com/posts")
+    fetch(`https://jsonplaceholder.typicode.com/${recourceType}`)
       .then((response) => response.json())
-      .then((json) => setPost(json))
-      .catch((err) => console.log(err));
-  }, []);
+      .then((json) => setItems(json));
+  });
+
   return (
     <div>
-      {post.map((post) => (
-        <div key={post.id}>
-          <h1>{post.title}</h1>
-          <p>{post.body}</p>
-        </div>
-      ))}
+      <button onClick={() => setRecourceType("posts")}>posts</button>
+      <button onClick={() => setRecourceType("comments")}>comments</button>
+      <button onClick={() => setRecourceType("users")}>users</button>
+      <button onClick={() => setRecourceType("photos")}>photos</button>
+      <button onClick={() => setRecourceType("todos")}>todos</button>
+      <button onClick={() => setRecourceType("albums")}>albums</button>
+      <h1>{recourceType}</h1>
+      {Items.map((item) => {
+        return <div>{JSON.stringify(item)}</div>;
+      })}
     </div>
   );
 }
