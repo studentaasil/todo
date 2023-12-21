@@ -6,14 +6,35 @@ function Todo() {
 
   function addTask() {
     if (text.trim() !== "") {
-      setTasks([...tasks, text]);
+      setTasks((t) => [...t, text]);
       setText("");
       console.log(tasks);
     }
   }
-  function deleteTask() {}
-  function upTask() {}
-  function downTask() {}
+  function deleteTask(index) {
+    const updatedTasks = tasks.filter((_, i) => i !== index);
+    setTasks(updatedTasks);
+  }
+  function upTask(index) {
+    if (index > 0) {
+      const updatedTasks = [...tasks];
+      [updatedTasks[index], updatedTasks[index - 1]] = [
+        updatedTasks[index - 1],
+        updatedTasks[index],
+      ];
+      setTasks(updatedTasks);
+    }
+  }
+  function downTask(index) {
+    if (index < tasks.length - 1) {
+      const updatedTasks = [...tasks];
+      [updatedTasks[index], updatedTasks[index + 1]] = [
+        updatedTasks[index + 1],
+        updatedTasks[index],
+      ];
+      setTasks(updatedTasks);
+    }
+  }
   return (
     <div>
       <h1>Todo List</h1>
@@ -23,10 +44,14 @@ function Todo() {
         placeholder="Add New Task ..."
       />
       <button onClick={addTask}>Add Task</button>
-      <button onClick={upTask}>👆</button>
-      <button onClick={downTask}>👇</button>
+
       {tasks.map((task, index) => (
-        <div key={index}>{task}</div>
+        <div key={index}>
+          {task}
+          <button onClick={() => deleteTask(index)}>Delete</button>
+          <button onClick={() => upTask(index)}>👆</button>
+          <button onClick={() => downTask(index)}>👇</button>
+        </div>
       ))}
     </div>
   );
