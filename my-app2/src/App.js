@@ -4,6 +4,7 @@ import Contact from "./pages/Contact";
 import Postlist from "./pages/Postlist";
 import PostDetails from "./pages/PostDetails";
 import Home from "./pages/Home";
+import Todo from "./Todo";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/post-list" element={<Postlist />} />
           <Route path="/posts/:id" element={<PostDetails />} />
+          <Route path="/todo" element={<Todo />} />
         </Routes>
       </BrowserRouter>
     </div>
