@@ -36,7 +36,7 @@ function Todo() {
     }
   }
   return (
-    <div>
+    <div className="todo-container">
       <h1>Todo List</h1>
       <input
         value={text}
@@ -46,8 +46,8 @@ function Todo() {
       <button onClick={addTask}>Add Task</button>
 
       {tasks.map((task, index) => (
-        <div key={index}>
-          {task}
+        <div key={index} className="task-container">
+          <span className="a">{task}</span>
           <button onClick={() => deleteTask(index)}>Delete</button>
           <button onClick={() => upTask(index)}>👆</button>
           <button onClick={() => downTask(index)}>👇</button>
