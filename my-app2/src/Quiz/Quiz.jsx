@@ -87,14 +87,13 @@ function Quiz() {
       });
     }
   };
-  const reset=()=>{
+  const reset = () => {
     setIndex(0);
     setQuestion(data[0]);
     setLock(false);
     setScore(0);
     setResult(false);
-
-  }
+  };
 
   return (
     <div className="container">
