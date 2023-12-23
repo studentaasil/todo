@@ -1,4 +1,4 @@
-const data = [
+const Data = [
   {
     question: "Which device is required for the Internet connection?",
     option1: "Modem",
@@ -41,3 +41,4 @@ const data = [
   },
 ];
 
+export default Data;

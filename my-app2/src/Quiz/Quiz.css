@@ -1,5 +1,3 @@
-
-
 .container {
     width: 640px;
     margin: auto;
@@ -52,4 +50,15 @@
 .container .index {
     margin: auto;
     font-size: 20px;
+}
+
+.container .wrong {
+    background: #ffebeb;
+    border-color: #ff4a4a;
+
+}
+
+.container .correct {
+    background: #d9f7be;
+    border-color: #00b300;
 }
